@@ -15,20 +15,20 @@
 
 
 
-<meta name="description" content="Reverse a linked list from position m to n. Do it in one-pass.">
-<meta name="keywords" content="leetcode,linkedlist">
+<meta name="description" content="模板方法模式的核心其实还是面向对象设计的体现: 封装、继承、多态。">
+<meta name="keywords" content="行为型模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 92. Reverse Linked List II">
-<meta property="og:url" content="https://coderunning.fun/2020/03/22/leetcode/linkedlist/reverse-linked-list-ii/index.html">
+<meta property="og:title" content="模板方法模式">
+<meta property="og:url" content="https://coderunning.fun/2020/05/07/design-pattern/模板方法模式/index.html">
 <meta property="og:site_name" content="harryhook&#39;s blogs">
-<meta property="og:description" content="Reverse a linked list from position m to n. Do it in one-pass.">
+<meta property="og:description" content="模板方法模式的核心其实还是面向对象设计的体现: 封装、继承、多态。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://coderunning.fun/2020/03/22/leetcode/linkedlist/reverse-linked-list-ii/demo.png">
-<meta property="og:updated_time" content="2020-04-24T15:03:26.680Z">
+<meta property="og:image" content="https://coderunning.fun/2020/05/07/design-pattern/模板方法模式/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:updated_time" content="2020-05-07T13:38:55.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 92. Reverse Linked List II">
-<meta name="twitter:description" content="Reverse a linked list from position m to n. Do it in one-pass.">
-<meta name="twitter:image" content="https://coderunning.fun/2020/03/22/leetcode/linkedlist/reverse-linked-list-ii/demo.png">
+<meta name="twitter:title" content="模板方法模式">
+<meta name="twitter:description" content="模板方法模式的核心其实还是面向对象设计的体现: 封装、继承、多态。">
+<meta name="twitter:image" content="https://coderunning.fun/2020/05/07/design-pattern/模板方法模式/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -60,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>LeetCode 92. Reverse Linked List II | harryhook&#39;s blogs</title>
+<title>模板方法模式 | harryhook&#39;s blogs</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +256,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-leetcode/linkedlist/reverse-linked-list-ii" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-design-pattern/模板方法模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/22/leetcode/linkedlist/reverse-linked-list-ii/" class="article-date">
-      <time datetime="2020-03-22T15:47:35.000Z" itemprop="datePublished">2020-03-22</time>
+      <a href="/2020/05/07/design-pattern/模板方法模式/" class="article-date">
+      <time datetime="2020-05-07T06:56:19.000Z" itemprop="datePublished">2020-05-07</time>
 </a>
 
 
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode 92. Reverse Linked List II
+      模板方法模式
     </h1>
   
 
@@ -284,13 +284,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/每周一题/">每周一题</a>
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linkedlist/">linkedlist</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/行为型模式/">行为型模式</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -300,24 +300,56 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Reverse a linked list from position m to n. Do it in one-pass.</p>
+        <p>模板方法模式的核心其实还是面向对象设计的体现: 封装、继承、多态。</p>
 <a id="more"></a>
 
-<p>Note: 1 ≤ m ≤ n ≤ length of list.</p>
-<h1 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h1><blockquote>
-<p>Input: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, m = 2, n = 4</p>
-</blockquote>
-<blockquote>
-<p>Output: 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;NULL</p>
-</blockquote>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>题意为给定 m、n， 翻转从第 m 到第 n 个结点。</p>
-<p>具体分三步：</p>
-<ol>
-<li>先遍历 m-1 个节点， 找到待翻转的结点为尾节点</li>
-<li>遍历 n-m-1 次， 依次翻转</li>
-</ol>
-<h1 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h1><p><img src="/2020/03/22/leetcode/linkedlist/reverse-linked-list-ii/demo.png" alt="示意图"></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    ListNode dummyHead = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">    dummyHead.next = head;</span><br><span class="line">    ListNode pre = dummyHead;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 先遍历 m 个结点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        pre = pre.next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 翻转前的尾结点</span></span><br><span class="line">    ListNode tail = pre.next;</span><br><span class="line">    ListNode temp;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 依次翻转</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - m; i++) &#123;</span><br><span class="line">        temp = pre.next;</span><br><span class="line">        pre.next = tail.next;</span><br><span class="line">        tail.next = tail.next.next;</span><br><span class="line">        pre.next.next = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummyHead.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="什么是模板方法模式"><a href="#什么是模板方法模式" class="headerlink" title="什么是模板方法模式"></a>什么是模板方法模式</h1><p>模板方法模式（Template Method）， 公开定义一个算法结构，将一些步骤的具体实现延迟到子类。模板方法模式使得子类可以不改变算法结构即可重新定义该算法的某些步骤。模板方法模式属于对象行为模式。</p>
+<h1 id="模板方法模式组成"><a href="#模板方法模式组成" class="headerlink" title="模板方法模式组成"></a>模板方法模式组成</h1><p><strong>AbstractTemplate</strong>: 抽象模板角色，定义一组基本方法供子类实现，定义并实现组合了基本方法的模板方法。</p>
+<p><strong>ConcreteTemplate</strong>: 具体模板角色， 实现抽象模板角色定义的一系列基本方法。</p>
+<p><strong>基本方法</strong></p>
+<ul>
+<li><p>抽象方法：由抽象模板角色声明， abstract 修饰， 具体模板角色实现</p>
+</li>
+<li><p>钩子方法：由抽象模板角色声明并实现， 具体模板角色进行扩展。</p>
+</li>
+<li><p>具体方法:  由抽象模板角色声明并实现，private修饰。</p>
+</li>
+</ul>
+<p><strong>模板方法</strong>:  由抽象模板角色声明并实现， final 修饰， 不允许具体角色重写。</p>
+<h1 id="模板方法模式-UML"><a href="#模板方法模式-UML" class="headerlink" title="模板方法模式 UML"></a>模板方法模式 UML</h1><p><img src="/2020/05/07/design-pattern/模板方法模式/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png" alt="模板方法模式 UML"></p>
+<h1 id="模板方法模式代码实现"><a href="#模板方法模式代码实现" class="headerlink" title="模板方法模式代码实现"></a>模板方法模式代码实现</h1><p>定义抽象模板</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderProcessTemplate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isGift;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">OrderProcessTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        isGift = isGift();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通用方法</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">giftWrap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"给礼品进行包装"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 交给子类扩展的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">doSelect</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 交给子类扩展的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">doPayment</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 交给子类扩展的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">doDelivery</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// hook method, 子类自行扩展</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">isGift</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义的模板方法，设计具体的逻辑</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">processOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        doSelect();</span><br><span class="line">        doPayment();</span><br><span class="line">        <span class="keyword">if</span> (isGift) &#123;</span><br><span class="line">            giftWrap();</span><br><span class="line">        &#125;</span><br><span class="line">        doDelivery();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义模板子类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetOrder</span> <span class="keyword">extends</span> <span class="title">OrderProcessTemplate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSelect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"线上购物，加入购物车"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPayment</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"进行线上支付"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doDelivery</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"根据收货地址进行邮寄"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StoreOrder</span> <span class="keyword">extends</span> <span class="title">OrderProcessTemplate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSelect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"顾客线下进行选购"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPayment</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"顾客线下进行支付，刷卡/现金结算"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doDelivery</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"物品已送至柜台"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isGift</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>客户端调用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        OrderProcessTemplate netOrder = <span class="keyword">new</span> NetOrder();</span><br><span class="line">        netOrder.processOrder();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"=================="</span>);</span><br><span class="line">        </span><br><span class="line">        OrderProcessTemplate storeOrder = <span class="keyword">new</span> StoreOrder();</span><br><span class="line">        storeOrder.processOrder();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<pre><code>线上购物，加入购物车
+进行线上支付
+给礼品进行包装
+根据收货地址进行邮寄
+=======================
+顾客线下进行选购
+顾客线下进行支付，刷卡/现金结算
+物品已送至柜台</code></pre><h1 id="模板方法适用场景"><a href="#模板方法适用场景" class="headerlink" title="模板方法适用场景"></a>模板方法适用场景</h1><ul>
+<li>一次性实现算法不变的部分，将可变的行为交给子类实现。</li>
+<li>多个子类具有同样的行为，可以将公共行为抽取，集中到父类中。</li>
+<li>控制子类扩展， 每个子类根据自身特性进行扩展。</li>
+</ul>
+<h1 id="模板方法模式优缺点"><a href="#模板方法模式优缺点" class="headerlink" title="模板方法模式优缺点"></a>模板方法模式优缺点</h1><p>优点：</p>
+<ul>
+<li>提高代码复用性， 相同的代码放在父类。</li>
+<li>提高代码可扩展性，不同的子类具有不同的行为。</li>
+<li>实现反向控制， 父类调用子类进行操作。</li>
+</ul>
+<p>缺点：</p>
+<p>引入抽象类， 每个不同的行为表现都需要一个子类来实现，导致类的个数增加系统也会更庞大。</p>
+
       
     </div>
     
@@ -332,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Example"><span class="toc-number">1.</span> <span class="toc-text">Example:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#示意图"><span class="toc-number">3.</span> <span class="toc-text">示意图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是模板方法模式"><span class="toc-number">1.</span> <span class="toc-text">什么是模板方法模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板方法模式组成"><span class="toc-number">2.</span> <span class="toc-text">模板方法模式组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板方法模式-UML"><span class="toc-number">3.</span> <span class="toc-text">模板方法模式 UML</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板方法模式代码实现"><span class="toc-number">4.</span> <span class="toc-text">模板方法模式代码实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板方法适用场景"><span class="toc-number">5.</span> <span class="toc-text">模板方法适用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板方法模式优缺点"><span class="toc-number">6.</span> <span class="toc-text">模板方法模式优缺点</span></a></li></ol>
         
     </div>
     <style>
@@ -363,15 +395,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/28/mysql/note9-replica-problems/" title="上一篇: MySQL 复制存在的问题">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/03/21/mysql/note8-replication-basic/" title="下一篇: MySQL 复制概述">
+            <a href="/2020/05/05/design-pattern/中介者模式/" title="下一篇: 中介者模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         
