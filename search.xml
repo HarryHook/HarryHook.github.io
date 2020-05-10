@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>LeetCode 143. Reorder List</title>
+      <link href="/2020/05/10/leetcode/linkedlist/reorder-list/"/>
+      <url>/2020/05/10/leetcode/linkedlist/reorder-list/</url>
+      
+        <content type="html"><![CDATA[<p>Given a singly linked list L: L0→L1→…→Ln-1→Ln,<br>reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…</p><a id="more"></a><p>You may not modify the values in the list’s nodes, only nodes itself may be changed.</p><h1 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h1><blockquote><p>Given 1-&gt;2-&gt;3-&gt;4, </p></blockquote><blockquote><p>reorder it to 1-&gt;4-&gt;2-&gt;3.</p></blockquote><h1 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h1><blockquote><p>Given 1-&gt;2-&gt;3-&gt;4-&gt;5, </p></blockquote><blockquote><p>reorder it to 1-&gt;5-&gt;2-&gt;4-&gt;3.</p></blockquote><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>给出一个链表， 将 1-2-3-4 这样的顺序重新排序成 1-4-2-3</p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ol><li>将链表分成两半(利用快慢指针找到中间结点)</li><li>后半部分链表翻转</li><li>同时遍历两个链表将对应的结点进行链接， l0-&gt;ln, l1-&gt;ln-1</li></ol><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reorderList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> ;</span><br><span class="line">    </span><br><span class="line">    ListNode pre = <span class="keyword">null</span>;</span><br><span class="line">    ListNode slow = head;</span><br><span class="line">    ListNode fast = head;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">        pre = slow;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 断开前后链表</span></span><br><span class="line">    pre.next = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 后半部分链表翻转</span></span><br><span class="line">    ListNode secondList = reverse(slow);</span><br><span class="line">    </span><br><span class="line">    ListNode l1 = head;</span><br><span class="line">    ListNode l2 = secondList;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 合并</span></span><br><span class="line">    <span class="keyword">while</span>(l1 != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ListNode n1 = l1.next, n2 = l2.next;</span><br><span class="line">        l1.next = l2;</span><br><span class="line">        <span class="keyword">if</span>(n1 == <span class="keyword">null</span>) <span class="keyword">break</span>;</span><br><span class="line">        l2.next = n1;</span><br><span class="line">        l2 = n2;</span><br><span class="line">        l1 = n1;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">reverse</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">    ListNode newHead = reverse(head.next);</span><br><span class="line">    head.next.next = head;</span><br><span class="line">    head.next = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">return</span> newHead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每周一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> linkedlist </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>模板方法模式</title>
       <link href="/2020/05/07/design-pattern/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/05/07/design-pattern/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</url>
