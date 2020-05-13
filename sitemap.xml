@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://coderunning.fun/2020/05/13/leetcode/linkedlist/sort-list/</loc>
+    
+    <lastmod>2020-05-13T15:12:14.677Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://coderunning.fun/2020/05/12/leetcode/linkedlist/insertion-sort-list/</loc>
     
     <lastmod>2020-05-13T14:08:18.922Z</lastmod>
@@ -226,14 +233,14 @@
   </url>
   
   <url>
-    <loc>https://coderunning.fun/2020/01/15/leetcode/linkedlist/SwapPairs/</loc>
+    <loc>https://coderunning.fun/2020/03/29/leetcode/linkedlist/convert-sorted-list-to-binary-search-tree/</loc>
     
     <lastmod>2020-04-24T15:03:26.673Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://coderunning.fun/2020/03/29/leetcode/linkedlist/convert-sorted-list-to-binary-search-tree/</loc>
+    <loc>https://coderunning.fun/2020/01/15/leetcode/linkedlist/SwapPairs/</loc>
     
     <lastmod>2020-04-24T15:03:26.673Z</lastmod>
     
