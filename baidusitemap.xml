@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://coderunning.fun/2020/06/21/design-pattern/%E5%A4%8D%E5%90%88%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2020-06-21</lastmod>
+  </url>  <url>
     <loc>https://coderunning.fun/2020/05/26/design-pattern/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2020-05-28</lastmod>
   </url>  <url>
@@ -37,10 +40,10 @@
     <loc>https://coderunning.fun/2020/03/28/mysql/note9-replica-problems/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>https://coderunning.fun/2020/03/21/mysql/note8-replication-basic/</loc>
+    <loc>https://coderunning.fun/2020/03/12/mysql/note7-query-optimize2/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>https://coderunning.fun/2020/03/12/mysql/note7-query-optimize2/</loc>
+    <loc>https://coderunning.fun/2020/03/21/mysql/note8-replication-basic/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
     <loc>https://coderunning.fun/2020/03/08/mysql/note6-query-optimize/</loc>
@@ -52,10 +55,10 @@
     <loc>https://coderunning.fun/2020/03/04/mysql/note5-cluster-index/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>https://coderunning.fun/2020/04/06/mysql/note10-scaling-mysql/</loc>
+    <loc>https://coderunning.fun/2020/04/11/mysql/note11-load-banlancing/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>https://coderunning.fun/2020/04/11/mysql/note11-load-banlancing/</loc>
+    <loc>https://coderunning.fun/2020/04/06/mysql/note10-scaling-mysql/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
     <loc>https://coderunning.fun/2020/02/16/mysql/note-2-shcema-design/</loc>
@@ -88,10 +91,10 @@
     <loc>https://coderunning.fun/2020/04/19/leetcode/linkedlist/linked-list-cycle/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>https://coderunning.fun/2020/04/19/leetcode/linkedlist/linked-list-cycle-ii/</loc>
+    <loc>https://coderunning.fun/2020/04/12/leetcode/linkedlist/copy-list-with-random-pointer/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>https://coderunning.fun/2020/04/12/leetcode/linkedlist/copy-list-with-random-pointer/</loc>
+    <loc>https://coderunning.fun/2020/04/19/leetcode/linkedlist/linked-list-cycle-ii/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
     <loc>https://coderunning.fun/2020/01/15/leetcode/linkedlist/SwapPairs/</loc>
